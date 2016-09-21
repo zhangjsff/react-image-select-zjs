@@ -24,6 +24,8 @@ A component to select image and preview when use react in a form
         onChange={this.onChange} 
         onError={this.onError} 
         name="fieldName"
+        label="+"
+        labelSize={80}
         max={9} />
       ...
     )
@@ -34,8 +36,8 @@ A component to select image and preview when use react in a form
 
 - onChange(files) 
 - onError(errorMsg) 
-- label : select button text
-- labelSize : select button text size
+- label : select button text , default is '+'
+- labelSize : select button text size, default is 80
 
 
 
