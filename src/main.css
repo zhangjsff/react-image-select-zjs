@@ -1,0 +1,25 @@
+.image-select-button,.image-select-zjs-preview-item{
+  height : 120px; width: 120px;
+  text-align: center;
+  font-size: 80px;
+  color: #ccc;
+  cursor: pointer;
+  line-height: 120px;
+  border : 1px solid #eee;
+  display: inline-block; margin-right: 10px; vertical-align: top;
+}
+
+.image-select-zjs-previews{
+  font-size: 0;display: inline-block;vertical-align: top;
+}
+
+.image-select-zjs-preview-item  img{
+  max-width: 100%; max-height: 100%;vertical-align: top;
+}
+.image-select-zjs-preview-item{
+  font-size: 12px;vertical-align: top;
+  display: inline-block;
+  overflow: hidden;
+  background: center no-repeat;
+  background-size: contain;
+}
