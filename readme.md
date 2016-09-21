@@ -38,6 +38,6 @@ A component to select image and preview when use react in a form
 - onError(errorMsg) 
 - label : select button text , default is '+'
 - labelSize : select button text size, default is 80
-
+- max : the maximum number of files, default is 9
 
 
