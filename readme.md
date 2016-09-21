@@ -1,11 +1,11 @@
 # react-image-select-zjs
 A component to select image and preview when use react in a form
 
-##Install
+## Install
 
 `npm install -S 'react-image-select-zjs';`
 
-##Usage
+## Usage
 
 ```
   import ImageSelect from 'react-image-select-zjs';
@@ -30,6 +30,12 @@ A component to select image and preview when use react in a form
   }
   ...
 ```
+## Properties
+
+- onChange(files) 
+- onError(errorMsg) 
+- label : select button text
+- labelSize : select button text size
 
 
 
