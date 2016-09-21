@@ -169,14 +169,17 @@
 	        _react2.default.createElement(
 	          'div',
 	          {
-	            style: { display: this.state.files.filter(function (item) {
+	            style: {
+	              display: this.state.files.filter(function (item) {
 	                return !!item;
-	              }).length >= this.props.max ? 'none' : 'inline-block' },
+	              }).length >= this.props.max ? 'none' : 'inline-block',
+	              fontSize: this.props.labelSize
+	            },
 	            className: 'image-select-button',
 	            onClick: function onClick() {
 	              return _this3.fileInput.click();
 	            } },
-	          '+'
+	          this.props.label
 	        )
 	      );
 	    }
@@ -212,6 +215,8 @@
 	}(_react2.default.Component);
 
 	ImageSelectZjs.defaultProps = {
+	  label: '+',
+	  labelSize: 80,
 	  exts: 'jpg|png|jpeg|gif|bmp',
 	  max: 2,
 	  onChange: function onChange() {},
@@ -231,7 +236,9 @@
 	    key: 'render',
 	    value: function render() {
 	      return _react2.default.createElement(ImageSelectZjs, {
-	        name: 'file'
+	        name: 'file',
+	        label: 'LOGO',
+	        labelSize: 18
 	      });
 	    }
 	  }]);

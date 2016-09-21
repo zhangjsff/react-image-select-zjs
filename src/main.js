@@ -4,6 +4,8 @@ require('./main.css');
 
 class ImageSelectZjs extends React.Component{
   static defaultProps = {
+    label: '+',
+    labelSize : 80,
     exts:'jpg|png|jpeg|gif|bmp',
     max : 2,
     onChange : () => {},
@@ -80,10 +82,13 @@ class ImageSelectZjs extends React.Component{
           })}
         </div>
         <div
-          style={{display : this.state.files.filter(item => !!item).length >= this.props.max ? 'none': 'inline-block'}}
+          style={{
+            display : this.state.files.filter(item => !!item).length >= this.props.max ? 'none': 'inline-block',
+            fontSize : this.props.labelSize
+          }}
           className="image-select-button"
           onClick={() => this.fileInput.click()}>
-          +
+          {this.props.label}
         </div>
       </div>
     )
@@ -119,6 +124,8 @@ class Test extends React.Component{
     return (
       <ImageSelectZjs
         name="file"
+        label='LOGO'
+        labelSize={18}
       />
     )
   }
