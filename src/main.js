@@ -71,7 +71,7 @@ class ImageSelectZjs extends React.Component{
 
   render(){
     return (
-      <div>
+      <div className="image-select-zjs">
 
         <input ref={e => this.fileInput = e} type="file" style={{display : 'none'}} name={this.props.name} onChange={this.onChange}/>
         <div className="image-select-zjs-previews">

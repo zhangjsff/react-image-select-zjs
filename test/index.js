@@ -155,7 +155,7 @@
 
 	      return _react2.default.createElement(
 	        'div',
-	        null,
+	        { className: 'image-select-zjs' },
 	        _react2.default.createElement('input', { ref: function ref(e) {
 	            return _this3.fileInput = e;
 	          }, type: 'file', style: { display: 'none' }, name: this.props.name, onChange: this.onChange }),
@@ -21680,7 +21680,7 @@
 
 
 	// module
-	exports.push([module.id, ".image-select-button,.image-select-zjs-preview-item{\n  height : 120px; width: 120px;\n  text-align: center;\n  font-size: 80px;\n  color: #ccc;\n  cursor: pointer;\n  line-height: 120px;\n  border : 1px solid #eee;\n  display: inline-block; margin-right: 10px; vertical-align: top;\n}\n\n.image-select-zjs-previews{\n  font-size: 0;display: inline-block;vertical-align: top;\n}\n\n.image-select-zjs-preview-item  img{\n  max-width: 100%; max-height: 100%;vertical-align: top;\n}\n.image-select-zjs-preview-item{\n  font-size: 12px;vertical-align: top;\n  display: inline-block;\n  overflow: hidden;\n  background: center no-repeat;\n  background-size: contain;\n}\n", ""]);
+	exports.push([module.id, ".image-select-zjs{display: inline-block;}\n.image-select-button,.image-select-zjs-preview-item{\n  height : 120px; width: 120px;\n  text-align: center;\n  font-size: 80px;\n  color: #ccc;\n  cursor: pointer;\n  line-height: 120px;\n  border : 1px solid #eee;\n  display: inline-block; margin-right: 10px; vertical-align: top;\n}\n\n.image-select-zjs-previews{\n  font-size: 0;display: inline-block;vertical-align: top;\n}\n\n.image-select-zjs-preview-item  img{\n  max-width: 100%; max-height: 100%;vertical-align: top;\n}\n.image-select-zjs-preview-item{\n  font-size: 12px;vertical-align: top;\n  display: inline-block;\n  overflow: hidden;\n  background: center no-repeat;\n  background-size: contain;\n}\n", ""]);
 
 	// exports
 
