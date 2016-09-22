@@ -31,7 +31,7 @@ class ImageSelectZjs extends React.Component{
       }
     }
 
-    console.log(dval)
+    if(!dval){return}
 
     var files = dval.map(item => {
       return {
