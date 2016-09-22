@@ -139,7 +139,7 @@ class ImageSelectZjs extends React.Component{
         className="image-select-zjs-preview-item"
         key={index}
         onClick={e => this.deleteFile(index)}
-        style={{backgroundImage:'url('+ (!!file.base64 || file.url) +')'}}
+        style={{backgroundImage:'url('+ (file.base64 || file.url) +')'}}
         >
       </div>
     )
