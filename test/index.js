@@ -96,6 +96,40 @@
 	  }
 
 	  _createClass(ImageSelectZjs, [{
+	    key: 'defaultValueHandler',
+	    value: function defaultValueHandler() {
+	      if (this.props.defaultValue) {
+	        var dval = [];
+
+	        if (!Array.isArray(this.props.defaultValue)) {
+	          dval = [this.props.defaultValue];
+	        } else {
+	          dval = this.props.defaultValue;
+	        }
+	      }
+
+	      console.log(dval);
+
+	      var files = dval.map(function (item) {
+	        return {
+	          type: 'url',
+	          url: item
+	        };
+	      });
+
+	      this.setState({
+	        files: files
+	      });
+	      this.props.onChange(this.state.files.filter(function (file) {
+	        return !!file;
+	      }));
+	    }
+	  }, {
+	    key: 'componentDidMount',
+	    value: function componentDidMount() {
+	      this.defaultValueHandler();
+	    }
+	  }, {
 	    key: 'addFile',
 	    value: function addFile(file) {
 	      if (this.state.files.filter(function (item) {
@@ -191,7 +225,7 @@
 	      if (!file) {
 	        return;
 	      }
-	      if (!file.base64) {
+	      if (!file.base64 && !file.url) {
 	        return _react2.default.createElement(
 	          'div',
 	          { className: 'image-select-zjs-preview-item', key: index, onClick: function onClick(e) {
@@ -206,7 +240,7 @@
 	        onClick: function onClick(e) {
 	          return _this4.deleteFile(index);
 	        },
-	        style: { backgroundImage: 'url(' + file.base64 + ')' }
+	        style: { backgroundImage: 'url(' + (!!file.base64 || file.url) + ')' }
 	      });
 	    }
 	  }]);
@@ -216,6 +250,7 @@
 
 	ImageSelectZjs.defaultProps = {
 	  label: '+',
+	  defaultValue: false,
 	  labelSize: 80,
 	  exts: 'jpg|png|jpeg|gif|bmp',
 	  max: 2,
@@ -236,6 +271,7 @@
 	    key: 'render',
 	    value: function render() {
 	      return _react2.default.createElement(ImageSelectZjs, {
+	        defaultValue: 'http://img.mianzhiwuyu.com/14745267246138wz-map.jpg@_200w',
 	        name: 'file',
 	        label: 'LOGO',
 	        labelSize: 18

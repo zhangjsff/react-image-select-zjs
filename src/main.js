@@ -5,6 +5,7 @@ require('./main.css');
 class ImageSelectZjs extends React.Component{
   static defaultProps = {
     label: '+',
+    defaultValue : false,
     labelSize : 80,
     exts:'jpg|png|jpeg|gif|bmp',
     max : 2,
@@ -17,6 +18,36 @@ class ImageSelectZjs extends React.Component{
     this.state = {
       files : []
     }
+  }
+
+  defaultValueHandler(){
+    if(this.props.defaultValue){
+      var dval =[]
+
+      if(!Array.isArray(this.props.defaultValue)){
+        dval = [this.props.defaultValue];
+      }else{
+        dval = this.props.defaultValue
+      }
+    }
+
+    console.log(dval)
+
+    var files = dval.map(item => {
+      return {
+        type : 'url',
+        url : item
+      }
+    })
+
+    this.setState({
+      files : files
+    });
+    this.props.onChange(this.state.files.filter(file => !!file));
+  }
+
+  componentDidMount(){
+    this.defaultValueHandler();
   }
 
   onChange = (e) => {
@@ -96,7 +127,7 @@ class ImageSelectZjs extends React.Component{
 
   renderPreview(file,index){
     if(!file){return;}
-    if(!file.base64){
+    if(!file.base64 && !file.url){
       return (
         <div className="image-select-zjs-preview-item" key={index} onClick={e => this.deleteFile(index)}>
           Loading
@@ -108,7 +139,7 @@ class ImageSelectZjs extends React.Component{
         className="image-select-zjs-preview-item"
         key={index}
         onClick={e => this.deleteFile(index)}
-        style={{backgroundImage:'url('+ file.base64 +')'}}
+        style={{backgroundImage:'url('+ (!!file.base64 || file.url) +')'}}
         >
       </div>
     )
@@ -123,6 +154,7 @@ class Test extends React.Component{
   render(){
     return (
       <ImageSelectZjs
+        defaultValue="http://img.mianzhiwuyu.com/14745267246138wz-map.jpg@_200w"
         name="file"
         label='LOGO'
         labelSize={18}
