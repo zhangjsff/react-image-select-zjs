@@ -43,8 +43,8 @@ class ImageSelectZjs extends React.Component{
     this.setState({
       files : files
     });
-    
-    this.props.onChange(this.state.files.filter(file => !!file));
+
+    this.props.onChange(files.filter(file => !!file));
   }
 
   componentDidMount(){

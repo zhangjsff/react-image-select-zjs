@@ -1,6 +1,6 @@
 {
   "name": "react-image-select-zjs",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "A component to select image and preview when use react in a form",
   "main": "index.js",
   "scripts": {

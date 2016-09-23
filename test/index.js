@@ -4362,7 +4362,7 @@
 	        files: files
 	      });
 
-	      this.props.onChange(this.state.files.filter(function (file) {
+	      this.props.onChange(files.filter(function (file) {
 	        return !!file;
 	      }));
 	    }
