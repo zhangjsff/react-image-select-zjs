@@ -43,6 +43,7 @@ class ImageSelectZjs extends React.Component{
     this.setState({
       files : files
     });
+    
     this.props.onChange(this.state.files.filter(file => !!file));
   }
 
@@ -146,27 +147,4 @@ class ImageSelectZjs extends React.Component{
   }
 }
 
-
-class Test extends React.Component{
-  constructor(props){
-    super(props)
-  }
-  render(){
-    return (
-      <ImageSelectZjs
-        defaultValue="http://img.mianzhiwuyu.com/14745267246138wz-map.jpg@_200w"
-        name="file"
-        label='LOGO'
-        labelSize={18}
-      />
-    )
-  }
-}
-
 export default ImageSelectZjs;
-
-
-ReactDom.render(
-  <Test></Test>,
-  document.getElementById('app-container')
-)

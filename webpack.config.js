@@ -1,6 +1,6 @@
 var path = require("path");
 module.exports = {
-    entry: './src/main.js',
+    entry: './test/test.js',
     output: {
         path: './test',
         // path: path.resolve(__dirname, "build"),
