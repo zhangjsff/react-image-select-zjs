@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactDom from 'react-dom';
 import ImageSelectZjs from '../src/main.js'
 
 class Test extends React.Component{
@@ -8,7 +9,7 @@ class Test extends React.Component{
   render(){
     return (
       <ImageSelectZjs
-        defaultValue="http://img.mianzhiwuyu.com/14745267246138wz-map.jpg@_200w"
+        // defaultValue="http://img.mianzhiwuyu.com/14745267246138wz-map.jpg@_200w"
         name="file"
         label='LOGO'
         labelSize={18}

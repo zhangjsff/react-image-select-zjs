@@ -52,6 +52,10 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
+	var _reactDom = __webpack_require__(35);
+
+	var _reactDom2 = _interopRequireDefault(_reactDom);
+
 	var _main = __webpack_require__(34);
 
 	var _main2 = _interopRequireDefault(_main);
@@ -76,9 +80,9 @@
 	  _createClass(Test, [{
 	    key: 'render',
 	    value: function render() {
-	      return _react2.default.createElement(_main2.default, {
-	        defaultValue: 'http://img.mianzhiwuyu.com/14745267246138wz-map.jpg@_200w',
-	        name: 'file',
+	      return _react2.default.createElement(_main2.default
+	      // defaultValue="http://img.mianzhiwuyu.com/14745267246138wz-map.jpg@_200w"
+	      , { name: 'file',
 	        label: 'LOGO',
 	        labelSize: 18
 	      });
@@ -88,7 +92,7 @@
 	  return Test;
 	}(_react2.default.Component);
 
-	ReactDom.render(_react2.default.createElement(Test, null), document.getElementById('app-container'));
+	_reactDom2.default.render(_react2.default.createElement(Test, null), document.getElementById('app-container'));
 
 /***/ },
 /* 1 */
